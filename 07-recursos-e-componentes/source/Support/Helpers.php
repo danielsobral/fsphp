@@ -177,6 +177,21 @@ function str_limit_chars(string $string, int $limit, string $pointer = "..."): s
  * ###############
  */
 
+function date_fmt(string $date = "now", string $format = "d/m/Y H\hi"): string
+{
+    return (new DateTime($date))->format($format);
+}
+
+function date_fmt_br(string $date = "now"): string
+{
+    return (new DateTime($date))->format(CONF_DATE_BR);
+}
+
+function date_fmt_app(string $date = "now"): string
+{
+    return (new DateTime($date))->format(CONF_DATE_APP);
+}
+
 /**
  * @param string $path
  * @return string
